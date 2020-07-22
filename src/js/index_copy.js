@@ -12,7 +12,7 @@ import "../styles/index.scss";
 import { Home } from "./component/home.js";
 
 class Iluminar extends React.Component {
-	/* 	constructor() {
+	constructor() {
 		super();
 		this.state = {
 			nombre: "Alvaro"
@@ -24,21 +24,6 @@ class Iluminar extends React.Component {
 		this.setState({
 			nombre: "Alexis"
 		});
-    }; */
-
-	constructor() {
-		super();
-		this.state = {
-			clase: " "
-		};
-	}
-
-	iluminar = () => {
-		//	alert("adios");
-
-		this.setState({
-			clase: "light"
-		});
 	};
 
 	render() {
@@ -46,17 +31,10 @@ class Iluminar extends React.Component {
 			<div className="trafficlight ">
 				<div className="poste" />
 				<div className="caja">
-					<div
-						onClick={this.iluminar}
-						className={this.state.clase}
-						id="red"
-					/>
-					<div className={this.state.clase} id="orange" />
-					<div
-						onClick={this.iluminaDos}
-						className={this.state.clase}
-						id="green"
-					/>
+					<h1 onClick={this.despedirse}>Hola {this.state.nombre}</h1>
+					<div className="red" />
+					<div className="orange" />
+					<div className="green" />
 				</div>
 			</div>
 		);
