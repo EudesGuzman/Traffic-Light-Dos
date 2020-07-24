@@ -15,33 +15,35 @@ class Iluminar extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			iluminate: " "
+			clase: " "
 		};
 	}
 
-	render() {
-		let luzRoja = "";
-		let luzAmarilla = "";
-		let luzVerde = "";
-		if (this.state.iluminate == "rojo") luzRoja = "light";
-		if (this.state.iluminate == "amarillo") luzAmarilla = "light";
-		if (this.state.iluminate == "verde") luzVerde = "light";
+	iluminar = () => {
+		this.setState({
+			clase: "light"
+		});
+	};
 
+	render() {
 		return (
 			<div className="trafficlight ">
 				<div className="poste" />
 				<div className="caja">
 					<div
-						className={"red " + luzRoja}
-						onClick={() => this.setState({ iluminate: "rojo" })}
+						onClick={this.iluminar}
+						className={this.state.clase}
+						id="red"
 					/>
 					<div
-						className={"yellow " + luzAmarilla}
-						onClick={() => this.setState({ iluminate: "amarillo" })}
+						onClick={this.iluminar}
+						className={this.state.clase}
+						id="orange"
 					/>
 					<div
-						className={"green " + luzVerde}
-						onClick={() => this.setState({ iluminate: "verde" })}
+						onClick={this.ilumina}
+						className={this.state.clase}
+						id="green"
 					/>
 				</div>
 			</div>
